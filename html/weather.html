@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title> Weather</title>
+</head>
+<body>
+
+<div class="app-wrap">
+    <header></header>
+        <input type="text" autocomplete="on" class="search-box" placeholder="Search for a country" value=" " >
+    </header>
+
+
+
+</div>
+<section>
+    <div id="icon">
+        <img src="" alt="" id="weather-icon">
+        <div id="temp"> </div>
+        <div id="description"></div>
+    </div>
+</section>
+
+   <section>
+    <div id="date">
+    
+    </div>
+    <div id="location">
+       
+    </div>
+   </section>
+    <section>
+        <H1> Weekly Forecast</H1>
+        <table>
+            <thead>
+                <tr>
+                    <th> DAYS</th>
+                </tr>
+                <tr>
+                    <th> TEMP</th>
+                </tr>
+                <tr>
+                    <th> HUMIDITY</th>
+                </tr>
+                <tr>
+                    <th> PRECIP</th>
+                </tr>
+            </thead>
+            <tbody >
+                <td id="first-day"> </td>
+                <td id="first-temp"> </td>
+                <td id="first-humidity"> </td>
+                <td id="first-precip"> </td>
+            </tbody>
+            <tbody >
+                <td id="second-day"> </td>
+                <td id="second-temp"> </td>
+                <td id="second-humidity"> </td>
+                <td id="second-precip"> </td>
+            </tbody>
+            <tbody >
+                <td id="third-day"> </td>
+                <td id="third-temp"> </td>
+                <td id="third-humidity"> </td>
+                <td id="third-precip"> </td>
+            </tbody>
+            <tbody >
+                <td id="fourth-day"> </td>
+                <td id="fourth-temp"> </td>
+                <td id="fourth-humidity"> </td>
+                <td id="fourth-precip"> </td>
+            </tbody>
+            <tbody >
+                <td id="fifth-day"> </td>
+                <td id="fifth-temp"> </td>
+                <td id="fifth-humidity"> </td>
+                <td id="fifth-precip"> </td>
+            </tbody>
+            <tbody >
+                <td id="sixth-day"> </td>
+                <td id="sixth-temp"> </td>
+                <td id="sixth-humidity"> </td>
+                <td id="sixth-precip"> </td>
+            </tbody>
+            <tbody >
+                <td id="seventh-day"> </td>
+                <td id="seventh-temp"> </td>
+                <td id="seventh-humidity"> </td>
+                <td id="seventh-precip"> </td>
+            </tbody>
+            
+        </table>
+    
+
+
+    </section>
+
+    <div id="map">
+
+    </div>
+    <script>
+
+var map;
+ function initMap(){
+    const searchBox=document.querySelector(".search-box");
+    
+    if(searchBox.value==" "){
+        
+        const long=-0.106
+     const lat=51.517
+     
+       map= new google.maps.Map(document.getElementById("map"),{
+      center: {lat:parseFloat(lat),lng:parseFloat(long)},
+      zoom:8
+    });
+    new google.maps.Marker({
+   position: {lat:parseFloat(lat),lng:parseFloat(long)},
+   map,
+   title: "London",
+ });
+
+    
+    }
+      
+    searchBox.addEventListener('keypress',(event)=>{
+        if(event.keyCode==13){
+            
+       fetch(`http://api.weatherstack.com/current?access_key=61287ba04c30039b265e2c21059064a2&query=${searchBox.value}&units=m `)
+   .then(weatherResponse=>weatherResponse.json())
+   .then(jsonData=>{
+   
+       const long=jsonData.location.lon
+    const lat=jsonData.location.lat
+    
+      map= new google.maps.Map(document.getElementById("map"),{
+     center: {lat:parseFloat(lat),lng:parseFloat(long)},
+     zoom:8
+   });
+
+   new google.maps.Marker({
+   position: {lat:parseFloat(lat),lng:parseFloat(long)},
+   map,
+   title: jsonData.location.name,
+ });
+
+   })
+   
+   
+   } 
+    
+   });
+
+    }
+
+  
+
+ 
+    </script>
+    
+<script src="main.js"></script>
+<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgyUFeSUGpSugvMGDALnIBqVLILinzFSA&callback=initMap"></script>
+
+</body>
+</html>

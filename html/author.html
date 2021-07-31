@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Natural Disasters Tracker">
+    <meta name="keywords" content="Earthquakes, Natural Disasters, Weather, Flood">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authors</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="..\css\authors.css">
+      <link rel="stylesheet" href="../css/general.css">
+      <script defer src="../javaScript/general.js"></script>
+      <script defer src="../javaScript/author.js"></script>
+     <script defer src="https://kit.fontawesome.com/05092c73e8.js" crossorigin="anonymous"></script>
+
+      </head>
+
+<body>
+  <nav>
+    <div class="mobileView">
+    <div id="logo">
+        <a href="#">LOGO</a>
+    </div>
+    <div id="bars">
+        <i class="fa fa-bars"></i>
+    </div>
+    <div id="close">
+        <i class="fas fa-times"></i>
+    </div>
+    </div>
+    <div id="content">
+            <a class="active homePage" href="#">HOME</a>
+            <a class="authorPage" href="../html/author.html">AUTHOR</a>
+            <a class="weatherPage" href="#">WEATHER</a>
+            <div id="dropDown">
+                <div>
+                <span class="disastersPage">DISASTERS</span>
+                <a class="fa fa-angle-down" id="iconDown"></a>
+                <a class="fa fa-angle-up" id="iconUp"></a>
+               </div>
+                <div id="dropdownContent">
+                    <a href="./html/earthquake.html">EARTHQUAKE</a>
+                    <a href="#">CYCLONE</a>
+                    <a href="#">FLOOD</a>
+                </div>
+         </div>
+    </div>
+</nav>
+<main>
+  <section>
+<div class="first-heading">
+    <h1 style="text-align: center;"> MEET OUT TEAM</h1>
+</div>
+<div class="sub-heading">
+    <h2>The people behind the great things you see!</h2>
+</div>
+<div class="team">
+  <div class="dirIcon">
+  <div onclick="leftSide()" class="leftIcon"><a><i class="fa fa-caret-left"></i></a></div>
+  <div onclick="rightSide()" class="rightIcon1"><a><i class="fa fa-caret-right"></i></a></div>
+  </div>
+  <div id="profiles">
+
+  </div>
+  <div onclick="rightSide()" class="rightIcon2"><a><i class="fa fa-caret-right"></i></a></div>
+</div>
+
+<div class="third-heading">
+    <h1>GET IN TOUCH</h1>
+
+</div>
+<div class="sub-heading2">
+    <h2 >For any enquiries, please reach out by filling out the form</h2>
+</div>
+<div>
+  <form action="/action_page.php">
+    <div class="row">
+      <div class="col-25">
+        <label for="fname"><strong>Full Name: </strong></label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="fname" name="fullname" >
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="email"><strong>Email: </strong></label>
+      </div>
+      <div class="col-75">
+        <input type="email" id="email" name="email" >
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-25">
+        <label for="message"><strong>Message: </strong></label>
+      </div>
+      <div class="col-75">
+        <textarea id="message" name="message"  style="height:200px"></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <input type="submit" value="SEND">
+    </div>
+  </form>
+</div>
+</main>
+<footer>
+  <div class="explore">
+  <span>EXPLORE</span>
+      <ul>
+         <a href="..\html\index.html"><li>HOME</li></a>
+            <a href="..\html\authors.html"><li>AUTHOR</li></a>
+            <a href=""><li>WEATHER</li></a>
+            <a href="../html/earthquake.html"><li>DISASTERS</li></a>
+            <a href="..\html\geojson.html"><li>GEOJSON</li></a>
+ 
+       </ul>
+  </div>
+  <div class="data">
+      <span>DATA RETRIEVED FROM</span>
+           <ul>
+           <a href="https://reliefweb.int/" target="_blank"><li>RELIEF WEB</li></a>
+            </ul>
+   </div>
+ <div class="pageDetails">
+  <span>PAGE DETAILS</span>
+
+ 
+     <p>This page provides you with an overview of what the web application provides.</p>
+ 
+ </div>
+</footer>
+</body>
+
+</html>

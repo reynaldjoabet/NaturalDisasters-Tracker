@@ -1,0 +1,35 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+body{
+    color: white;
+    font-size: 80px;
+}
+#weather{
+    background-color: blue;
+    display: inline-block;
+    width: 58%;
+    margin-left: 1%;
+}
+
+
+#geomap{
+    background-color: red;
+    display: inline-block;
+    width: 39%;
+    margin-left: 0.5%;
+   
+
+    
+}
+
+#active{
+    color: rgba(41, 39, 39, 0.726);
+    
+}
+
+#map{
+    height: 1200px;
+}
